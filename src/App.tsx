@@ -638,7 +638,7 @@ const Footer = () => (
 
       <div className="pt-8 border-t border-cyber-border flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="text-gray-500 font-body text-sm">
-          © 2024 Shield Layer Capital - FZCO. All rights reserved.
+          © 2026 Shield Layer Capital - FZCO. All rights reserved.
         </div>
         <div className="flex items-center gap-6">
           <span className="text-gray-500 font-body text-sm">
