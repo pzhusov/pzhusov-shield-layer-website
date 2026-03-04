@@ -642,7 +642,7 @@ const Footer = () => (
         </div>
         <div className="flex items-center gap-6">
           <span className="text-gray-500 font-body text-sm">
-            Licensed by DIEZA
+            Licensed by IFZA
           </span>
           <span className="text-gray-600 font-body text-sm">|</span>
           <span className="text-gray-500 font-body text-sm">
