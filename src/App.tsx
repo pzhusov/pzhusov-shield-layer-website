@@ -186,82 +186,154 @@ const Hero = () => (
 
 // About Section
 const About = () => (
-  <section id="about" className="relative py-24 bg-cyber-surface">
-    <div className="absolute inset-0 bg-dots opacity-50" />
+  <section id="about" className="relative py-24 bg-cyber-surface overflow-hidden">
+    {/* Background Effects */}
+    <div className="absolute inset-0 bg-dots opacity-30" />
+    <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyber-blue/5 rounded-full blur-3xl" />
+    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-3xl" />
 
     <div className="relative z-10 max-w-7xl mx-auto px-6">
-      <div className="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-cyan/30 bg-cyber-cyan/10 mb-6">
-            <Brain className="w-4 h-4 text-cyber-cyan" />
-            <span className="text-cyber-cyan font-body text-sm">About Us</span>
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-cyan/30 bg-cyber-cyan/10 mb-6">
+          <Brain className="w-4 h-4 text-cyber-cyan" />
+          <span className="text-cyber-cyan font-body text-sm">About Us</span>
+        </div>
+
+        <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
+          Empowering Investors with{' '}
+          <span className="gradient-text">Strategic Intelligence</span>
+        </h2>
+
+        <p className="text-gray-400 font-body text-lg max-w-3xl mx-auto leading-relaxed">
+          Shield Layer Capital is a premier investment research and strategic consulting firm headquartered in Dubai Silicon Oasis.
+          We deliver data-driven insights and comprehensive advisory services to help our clients navigate complex global markets.
+        </p>
+      </div>
+
+      {/* Main Content Grid */}
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+        {/* Left Column - Company Info */}
+        <div className="space-y-8">
+          {/* Mission Card */}
+          <div className="relative bg-cyber-card border border-cyber-border rounded-2xl p-6 hover:border-cyber-blue/50 transition-all duration-300 group">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-cyber-blue/20 flex items-center justify-center">
+                  <Target className="w-5 h-5 text-cyber-blue" />
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-white">Our Mission</h3>
+              </div>
+              <p className="text-gray-400 font-body leading-relaxed">
+                To provide institutional-grade investment research and strategic consulting that enables our clients to make informed decisions
+                and achieve superior returns in today's dynamic market landscape.
+              </p>
+            </div>
           </div>
 
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
-            Data-Driven Insights for{' '}
-            <span className="gradient-text">Smart Investments</span>
-          </h2>
+          {/* Vision Card */}
+          <div className="relative bg-cyber-card border border-cyber-border rounded-2xl p-6 hover:border-cyber-cyan/50 transition-all duration-300 group">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-cyber-cyan/20 flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-cyber-cyan" />
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-white">Our Vision</h3>
+              </div>
+              <p className="text-gray-400 font-body leading-relaxed">
+                To be the most trusted partner for investors seeking expert guidance in global markets,
+                cryptocurrency ecosystems, and emerging investment opportunities.
+              </p>
+            </div>
+          </div>
 
-          <p className="text-gray-400 font-body text-lg leading-relaxed mb-8">
-            Shield Layer Capital - FZCO is a premier investment research and strategic consulting firm based in Dubai Silicon Oasis.
-            We specialize in deep market research, cryptocurrency analysis, and comprehensive consulting services that empower
-            our clients to make informed investment decisions.
-          </p>
-
-          <div className="space-y-4">
+          {/* Values */}
+          <div className="grid grid-cols-2 gap-4">
             {[
-              'In-depth stock market research and analysis',
-              'Cryptocurrency and blockchain business consulting',
-              'Strategic consulting for institutional investors',
-              'Comprehensive financial modeling services',
-              'Tender structuring and advisory',
-              'Dubai-based with global market coverage'
+              { icon: CheckCircle2, text: 'Integrity', color: 'text-cyber-blue' },
+              { icon: CheckCircle2, text: 'Excellence', color: 'text-cyber-cyan' },
+              { icon: CheckCircle2, text: 'Innovation', color: 'text-cyber-blue' },
+              { icon: CheckCircle2, text: 'Trust', color: 'text-cyber-cyan' }
             ].map((item, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-cyber-cyan flex-shrink-0" />
-                <span className="text-gray-300 font-body">{item}</span>
+              <div key={index} className="flex items-center gap-2 text-gray-300 font-body">
+                <item.icon className={`w-4 h-4 ${item.color}`} />
+                <span>{item.text}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative">
-          {/* Decorative elements */}
-          <div className="absolute -top-4 -left-4 w-24 h-24 border border-cyber-blue/30 rounded-lg" />
-          <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-cyber-cyan/30 rounded-lg" />
+        {/* Right Column - Stats & Info */}
+        <div className="space-y-6">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { value: '2024', label: 'Founded', icon: TrendingUp },
+              { value: '50+', label: 'Projects Completed', icon: Briefcase },
+              { value: 'Global', label: 'Market Coverage', icon: LineChart },
+              { value: '24/7', label: 'Client Support', icon: Users }
+            ].map((stat, index) => (
+              <div key={index} className="bg-cyber-card border border-cyber-border rounded-xl p-5 text-center hover:border-cyber-blue/30 transition-all">
+                <stat.icon className="w-6 h-6 text-cyber-cyan mx-auto mb-2" />
+                <div className="font-heading text-2xl font-bold gradient-text">{stat.value}</div>
+                <div className="text-gray-500 font-body text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
 
-          <div className="relative bg-cyber-card border border-cyber-border rounded-2xl p-8">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-4">
-                <LineChart className="w-8 h-8 text-cyber-blue mx-auto mb-3" />
-                <div className="text-white font-heading font-semibold">Research</div>
-                <div className="text-cyber-cyan font-body text-sm">Deep Analysis</div>
-              </div>
-              <div className="text-center p-4">
-                <Brain className="w-8 h-8 text-cyber-cyan mx-auto mb-3" />
-                <div className="text-white font-heading font-semibold">Strategy</div>
-                <div className="text-cyber-cyan font-body text-sm">Expert Advisory</div>
-              </div>
-              <div className="text-center p-4">
-                <Bitcoin className="w-8 h-8 text-cyber-blue mx-auto mb-3" />
-                <div className="text-white font-heading font-semibold">Crypto</div>
-                <div className="text-cyber-cyan font-body text-sm">Business Analysis</div>
-              </div>
-              <div className="text-center p-4">
-                <MapPin className="w-8 h-8 text-cyber-cyan mx-auto mb-3" />
-                <div className="text-white font-heading font-semibold">Location</div>
-                <div className="text-cyber-cyan font-body text-sm">Dubai, UAE</div>
+          {/* Location Card */}
+          <div className="bg-cyber-card border border-cyber-border rounded-2xl p-6">
+            <h4 className="font-heading text-lg font-semibold text-white mb-4">Headquarters</h4>
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-cyber-cyan flex-shrink-0 mt-0.5" />
+              <div>
+                <div className="text-white font-body">IFZA Properties</div>
+                <div className="text-gray-400 font-body text-sm">Dubai Silicon Oasis</div>
+                <div className="text-gray-500 font-body text-sm">Dubai, UAE</div>
               </div>
             </div>
 
-            <div className="mt-6 pt-6 border-t border-cyber-border">
-              <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
-                <MapPin className="w-4 h-4" />
-                <span>IFZA Properties, Dubai Silicon Oasis</span>
+            <div className="mt-4 pt-4 border-t border-cyber-border">
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <Handshake className="w-4 h-4 text-cyber-blue" />
+                <span>Licensed by IFZA • License #50809</span>
               </div>
             </div>
           </div>
+
+          {/* Key Services List */}
+          <div className="bg-gradient-to-r from-cyber-blue/10 to-cyber-cyan/10 border border-cyber-blue/20 rounded-2xl p-6">
+            <h4 className="font-heading text-lg font-semibold text-white mb-4">Our Expertise</h4>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                'Market Research',
+                'Crypto Consulting',
+                'Strategic Advisory',
+                'Financial Modeling',
+                'Risk Analysis',
+                'Tender Structuring'
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-2 text-gray-300 font-body text-sm">
+                  <ChevronRight className="w-4 h-4 text-cyber-blue" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="mt-16 text-center">
+        <a
+          href="#contact"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyber-blue to-cyber-cyan text-white font-body font-semibold rounded-lg hover:opacity-90 transition-all duration-300 glow-primary"
+        >
+          Work With Us
+          <ArrowRight className="w-5 h-5" />
+        </a>
       </div>
     </div>
   </section>
