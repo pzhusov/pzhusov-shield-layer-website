@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import {
   Menu,
   X,
-  Shield,
   TrendingUp,
   Bitcoin,
   LineChart,
@@ -22,16 +21,20 @@ import {
   Users
 } from 'lucide-react'
 
-// Logo Component (SVG representation of the Shield Layer logo)
+// Logo Component with actual logo image and glow effect
 const Logo = () => (
-  <div className="flex items-center gap-3">
+  <div className="flex items-center gap-3 group">
     <div className="relative">
-      <Shield className="w-10 h-10 text-white" strokeWidth={1.5} />
-      <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue to-cyber-cyan opacity-30 blur-xl" />
-    </div>
-    <div className="flex flex-col">
-      <span className="text-white font-heading font-bold text-xl tracking-tight">SHIELD</span>
-      <span className="text-cyber-cyan font-heading font-medium text-sm tracking-wider">LAYER</span>
+      {/* Outer glow effect */}
+      <div className="absolute -inset-3 bg-gradient-to-r from-cyber-blue via-cyber-cyan to-cyber-blue opacity-0 group-hover:opacity-60 blur-2xl transition-all duration-500 group-hover:duration-200" />
+      {/* Inner glow effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-cyber-blue to-cyber-cyan opacity-0 group-hover:opacity-80 blur-md transition-all duration-300" />
+      {/* Logo image with enhanced glow on hover */}
+      <img
+        src="/Logo.jpg"
+        alt="Shield Layer Capital"
+        className="relative h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.8)] group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]"
+      />
     </div>
   </div>
 )
