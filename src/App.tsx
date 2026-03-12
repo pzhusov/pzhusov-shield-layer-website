@@ -21,7 +21,7 @@ import {
   Users
 } from 'lucide-react'
 
-// Logo Component with actual logo image and glow effect
+// Logo Component with actual logo image and enhanced glow effect
 const Logo = () => (
   <div className="flex items-center gap-3 group">
     <div className="relative">
